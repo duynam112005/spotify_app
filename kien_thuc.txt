@@ -1,0 +1,2 @@
+1. Đối với android, nếu muốn lấy dữ liệu từ internet thì phải vào android/app/src/main/AndroidManifest.xml
+để thêm dòng lệnh cho phép <uses-permission android:name="android.permission.INTERNET" />

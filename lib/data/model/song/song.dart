@@ -19,18 +19,27 @@ class Song {
 
   factory Song.fromJson(Map<String, dynamic> json){
     return Song(
-      id: json['id'],
-      title: json['title'],
-      album: json['album'],
-      artist: json['artist'],
-      source: json['source'],
-      image: json['image'],
-      duration: json['duration'],
+      id: json['id'] ?? '',
+      title: json['title'] ?? '',
+      album: json['album'] ?? '',
+      artist: json['artist'] ?? '',
+      source: json['source'] ?? '',
+      image: json['image'] ?? '',
+      duration: json['duration'] ?? 0,
     );
   }
 
-  
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Song && runtimeType == other.runtimeType && id == other.id;
 
+  @override
+  int get hashCode => id.hashCode;
+
+  @override
+  String toString() {
+    return 'Song{id: $id, title: $title, album: $album, artist: $artist, source: $source, image: $image, duration: $duration}';
+  }
 }
 
 
